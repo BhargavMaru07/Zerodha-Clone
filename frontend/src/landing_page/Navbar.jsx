@@ -1,5 +1,5 @@
 import React from "react";
-import {Link}  from "react-router-dom"
+import {Link,NavLink}  from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -27,29 +27,58 @@ const Navbar = () => {
             <form class="d-flex" role="search">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <Link class="nav-link active" aria-current="page" to="/signup">
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "text-primary" : "text-dark"}`
+                    }
+                    aria-current="page"
+                    to="/signup"
+                  >
                     Signup
-                  </Link>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <Link class="nav-link active" to="/about">
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "text-primary" : "text-dark"}`
+                    }
+                    to="/about"
+                  >
                     About
-                  </Link>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <Link to="/product" class="nav-link active" aria-disabled="true">
+                  <NavLink
+                    to="/product"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "text-primary" : "text-dark"}`
+                    }
+                    aria-disabled="true"
+                  >
                     Product
-                  </Link>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <Link to="pricing" class="nav-link  active" aria-disabled="true">
+                  <NavLink
+                    to="pricing"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "text-primary" : "text-dark"}`
+                    }
+                    aria-disabled="true"
+                  >
                     Pricing
-                  </Link>
+                  </NavLink>
                 </li>
                 <li class="nav-item">
-                  <Link to="support" class="nav-link  active" aria-disabled="true">
+                  <NavLink
+                    to="support"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "text-primary" : "text-dark"}`
+                    }
+                    aria-disabled="true"
+                  >
                     Support
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </form>
