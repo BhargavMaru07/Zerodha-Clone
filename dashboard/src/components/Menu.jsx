@@ -20,7 +20,7 @@ const Menu = () => {
     <div className="menu-container">
       <img src="logo.png" style={{ width: "50px" }} />
       <div className="menus">
-        <ul>
+        <ul className="mt-4">
           <li>
             <Link
               style={{ textDecoration: "none" }}
