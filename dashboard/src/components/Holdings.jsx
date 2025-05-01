@@ -1,7 +1,16 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+
 import { holdings } from "../data/data";
+import axios  from 'axios'
 
 const Holdings = () => {
+
+  const [allHoldings,setAllHoldings] = useState([]);
+
+  useEffect(()=>{
+    axios.get("http://localhost:3000/allPositions");
+  })
+
   return (
     <>
       <h3 className="title">Holdings ({holdings.length})</h3>
